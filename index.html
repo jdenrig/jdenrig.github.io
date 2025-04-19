@@ -31,7 +31,42 @@
 	<center>
 	<h1> <b style=color:white>Welcome to my webpage!</b></h1>
 		</center>
-	
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Image with CSS Transition</title>
+    <style>
+        #container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+        
+        #movingImage {
+            position: absolute;
+            width: 100px;
+            left: -100px;
+            top: 150px;
+            transition: left 4s linear; /* Duration and timing function */
+        }
+        
+        #movingImage.move {
+            left: 100%; /* Move to the right edge */
+        }
+    </style>
+</head>
+<body>
+    <h1>Moving Image Animation</h1>
+    
+    <div id="container">
+        <img id="movingImage" src="images/jimmy1.jpg" alt="Moving Image">
+    </div>
+
+    <button onclick="document.getElementById('movingImage').classList.toggle('move')">
+        Start/Reset Animation
+    </button>
+</body>
 	
 	<center>
 	<h1> Thank you for visiting my page!</h1>
