@@ -1,39 +1,37 @@
 <!DOCTYPE HTML>
-	<head>
-		
-	</head>
-	<HEADER>
-	<TITLE> James Enright </TITLE>
-	</HEADER>
 
-	<BODY bgcolor=#115700>
-	<FONT COLOR="white">
-	<CENTER>
-	<button style="background-color: #04AA6D; border-color blue; color:white;">
-		 <a style="text-decoration:none; color:white" href="aboutme.html" target="_self">
-			<img src="images/jimmy1.jpg" width="320" height="200"/>
-			<P><H2><b>About Me</H2></b> </P>
-			</a>
-			</button>
-	<button style="background-color: #04AA6D; border-color blue; color:white; ">
-		 <a style="text-decoration:none; color:white" href="Projects.html" target="_self">
-			<img src="images/Computer.jpg"width="320" height="200"/>
-			<P><H2><b> Projects</H2></b> </P>
-			</a>
-			</button>
-	<button style="background-color: #04AA6D; border-color blue; color:white; padding: ">
-		 <a style="text-decoration:none; color:white" href="Blog.html" target="_self">
-			<img src="images/Setup.jpg"width="320" height="200"/>
-			<P><H2><b> Setup</H2></b> </P>
-			</a>
-			</button>
-	</CENTER>
-	<center>
-	<h1> <b style=color:white>Welcome to my webpage!</b></h1>
-		</center>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
+	<head>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	
+	<style>
+        .fancy-button {
+            background: linear-gradient(135deg, #115700, #04AA6D); /* Gradient background */
+            border: none;
+            border-radius: 25px; /* Rounded corners */
+            color: white;
+            padding: 15px 30px; /* Padding for size */
+            font-size: 16px;
+			font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+        }
+
+        .fancy-button:hover {
+            background: linear-gradient(135deg, #04AA6D, #115700); /* Reverse gradient on hover */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Slightly larger shadow */
+            transform: translateY(-2px); /* Lift effect */
+        }
+
+        .fancy-button:active {
+            transform: translateY(0); /* Reset lift effect on click */
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Smaller shadow on click */
+        }
+		
+    </style>
+	
+	<style>
         #container {
             position: relative;
             width: 100%;
@@ -44,31 +42,88 @@
         
         #movingImage {
             position: absolute;
-            width: 100px;
-            left: -100px;
-            top: 150px;
-            transition: left 4s linear; /* Duration and timing function */
+            width: 300px; /* Adjust based on your image size */
+            top: 150px;   /* Vertical position */
+            left: -100px; /* Start off-screen to the left */
+            animation: moveAndFlip 8s linear infinite; /* Animation properties */
         }
-        
-        #movingImage.move {
-            left: 100%; /* Move to the right edge */
+
+         @keyframes moveAndFlip {
+            0% {
+                left: -100px; /* Start position */
+                transform: rotate(0deg) scaleX(1); /* Normal orientation */
+            }
+			25% {
+				transform: rotate(20deg) scaleX(1);
+			}
+            50% {
+                left: calc(100% - 100px); /* End position on the right */
+                transform: rotate(0 deg) scaleX(1); /* Normal orientation */
+            }
+            51% {
+                transform: scaleX(-1); /* Flip horizontally */
+            }
+			75% {
+				transform: rotate(-20deg) scaleX(-1)
+			}
+            100% {
+                left: -100px; /* Return to start position */
+                transform: scaleX(-1); /* Flipped orientation */
+            }
+        }
         }
     </style>
-</head>
+	
+	</head>
+	
+	<HEADER>
+	<TITLE> James Enright </TITLE>
+	</HEADER>
+	
+	
+	<BODY bgcolor=#115700>
+	<FONT COLOR="white">
+	<CENTER>
+	<button class="fancy-button">
+			<img src="images/jimmy1.jpg" width="320" height="200"/>
+			<P><H2><b>About Me</H2></b> </P>
+			</a>
+			</button>
+	<button class="fancy-button">
+		 <a style="text-decoration:none; color:white" href="Projects.html" target="_self">
+			<img src="images/Computer.jpg"width="320" height="200"/>
+			<P><H2><b> Projects</H2></b> </P>
+			</a>
+			</button>
+	<button class = "fancy-button">
+		 <a style="text-decoration:none; color:white" href="Blog.html" target="_self">
+			<img src="images/Setup.jpg"width="320" height="200"/>
+			<P><H2><b> Setup</H2></b> </P>
+			</a>
+			</button>
+			<button class = "fancy-button">
+		 <a style="text-decoration:none; color:white" href="Blog.html" target="_self">
+			<img src="images/Setup.jpg"width="320" height="200"/>
+			<P><H2><b> The Void </H2></b> </P>
+			</a>
+			</button>
+	</CENTER>
+	<center>
+		</center>
+	 
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 <body>
-    <h1>Moving Image Animation</h1>
+  <center> <i> <h1> Sheldon welcomes you </h1> </i> </center> 
     
     <div id="container">
-        <img id="movingImage" src="images/jimmy1.jpg" alt="Moving Image">
+        <img id="movingImage" src="sheldon.png" alt="Moving Image">
     </div>
-
-    <button onclick="document.getElementById('movingImage').classList.toggle('move')">
-        Start/Reset Animation
-    </button>
-</body>
 	
 	<center>
-	<h1> Thank you for visiting my page!</h1>
+	<h1> Thanks for visiting my page!</h1>
 	
 	
 	<img src="images/tubeman3.gif" alt="Tubeman" style="float: center;">
